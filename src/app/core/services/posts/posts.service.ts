@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IPost } from '../../models/post.model';
 import { IComment } from '../../models/comment.model';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
 @Injectable({
   providedIn: 'root',
 })
@@ -26,13 +31,18 @@ export class PostsService {
   }
 
   createPost(payload: IPost): Observable<IPost> {
-    return this.HttpClient.post<IPost>(`${environment.apiUrl}/posts`, payload);
+    return this.HttpClient.post<IPost>(
+      `${environment.apiUrl}/posts`,
+      payload,
+      httpOptions
+    );
   }
 
   updatePost(payload: IPost): Observable<IPost> {
     return this.HttpClient.put<IPost>(
       `${environment.apiUrl}/posts/${payload.id}`,
-      payload
+      payload,
+      httpOptions
     );
   }
 
