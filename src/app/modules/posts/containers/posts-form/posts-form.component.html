@@ -1,1 +1,25 @@
-<p>posts-edit works!</p>
+<h1>{{ title }} User</h1>
+
+<form [formGroup]="form" (ngSubmit)="onAddNewPost()">
+  <fieldset>
+    <label>Title</label>
+    <input
+      type="text"
+      placeholder="Title post"
+      formControlName="title"
+      [value]="post?.title"
+    />
+    <small *ngIf="formValues['title'].invalid && !formValues['title'].pristine"
+      >Este campo deve conter entre 3 e 60 caracteres</small
+    >
+
+    <label>Body</label>
+    <input
+      type="text"
+      placeholder="Body post"
+      formControlName="body"
+      [value]="post?.body"
+    />
+    <button [disabled]="form.invalid" type="submit">Save</button>
+  </fieldset>
+</form>

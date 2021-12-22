@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { PostsRoutingModule } from './posts-routing.module';
 import { PostsListComponent } from './containers/posts-list/posts-list.component';
@@ -23,7 +23,7 @@ import { PostsItemComponent } from './containers/posts-list/posts-item/posts-ite
     PostsRoutingModule,
     SpinnerModule,
     TruncatePipeModule,
-    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class PostsModule {}
