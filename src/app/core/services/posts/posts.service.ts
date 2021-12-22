@@ -14,39 +14,41 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class PostsService {
+  private contextUrl = `${environment.apiUrl}/posts`;
+
   constructor(private httpClient: HttpClient) {}
 
-  getPosts(): Observable<IPost[]> {
-    return this.httpClient.get<IPost[]>(`${environment.apiUrl}/posts`);
+  public getPosts(): Observable<IPost[]> {
+    return this.httpClient.get<IPost[]>(`${this.contextUrl}`);
   }
 
-  getPostById(id: number): Observable<IPost> {
-    return this.httpClient.get<IPost>(`${environment.apiUrl}/posts/${id}`);
+  public getPostById(id: number): Observable<IPost> {
+    return this.httpClient.get<IPost>(`${this.contextUrl}/${id}`);
   }
 
-  getCommentsByPostId(postId: number): Observable<IComment[]> {
+  public getCommentsByPostId(postId: number): Observable<IComment[]> {
     return this.httpClient.get<IComment[]>(
-      `${environment.apiUrl}/posts/${postId}/comments`
+      `${this.contextUrl}/${postId}/comments`
     );
   }
 
-  createPost(payload: IPost): Observable<IPost> {
+  public createPost(payload: IPost): Observable<IPost> {
     return this.httpClient.post<IPost>(
-      `${environment.apiUrl}/posts`,
+      `${this.contextUrl}`,
       payload,
       httpOptions
     );
   }
 
-  updatePost(payload: IPost): Observable<IPost> {
+  public updatePost(payload: IPost): Observable<IPost> {
     return this.httpClient.put<IPost>(
-      `${environment.apiUrl}/posts/${payload.id}`,
+      `${this.contextUrl}/${payload.id}`,
       payload,
       httpOptions
     );
   }
 
-  deletePost(id: number): Observable<void> {
-    return this.httpClient.delete<void>(`${environment.apiUrl}/posts/${id}`);
+  public deletePost(id: number): Observable<void> {
+    return this.httpClient.delete<void>(`${this.contextUrl}/${id}`);
   }
 }
