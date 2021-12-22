@@ -1,1 +1,24 @@
-<p>posts-details works!</p>
+<section *ngIf="post">
+  <h2>{{ post.title | uppercase }} Details</h2>
+
+  <div><span>id: </span>{{ post.id }}</div>
+
+  <small>{{ post.body }}</small>
+
+  <div>
+    <fieldset>
+      <label for="post-title">Post title: </label>
+      <input
+        id="post-title"
+        [(ngModel)]="post.title"
+        placeholder="Post title"
+      />
+      <hr />
+      <label for="post-body">Post body: </label>
+      <input id="post-body" [(ngModel)]="post.body" placeholder="Post body" />
+    </fieldset>
+  </div>
+
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</section>
