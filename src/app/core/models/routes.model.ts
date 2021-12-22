@@ -1,5 +1,5 @@
 export interface IRoutes {
-  mainPath: string;
+  sourcePath: string;
   path: string;
   title: string;
 }

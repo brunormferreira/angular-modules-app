@@ -6,7 +6,7 @@ import { PostsService } from '../../../../core/services/posts/posts.service';
 
 import { tap, delay } from 'rxjs';
 @Component({
-  selector: 'app-posts-details',
+  selector: 'posts-details',
   templateUrl: './posts-details.component.html',
   styleUrls: ['./posts-details.component.scss'],
 })

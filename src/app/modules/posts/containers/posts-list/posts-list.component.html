@@ -9,19 +9,10 @@
 
   <hr />
 
-  <ul *ngFor="let post of posts">
-    <li>{{ post.title | truncate: 20 }}</li>
-    <li>{{ post.body | truncate: 50 }}</li>
-
-    <nav class="mt-1">
-      <a
-        *ngFor="let router of routes"
-        [routerLink]="[router.mainPath, post.id, router.path]"
-      >
-        <button>{{ router.title }}</button>
-      </a>
-
-      <button (click)="onDeletePost(post)">× Delete</button>
-    </nav>
-  </ul>
+  <posts-item
+    *ngFor="let post of posts"
+    [post]="post"
+    [routes]="routesValue"
+    (remove)="onDeletePost($event)"
+  ></posts-item>
 </section>

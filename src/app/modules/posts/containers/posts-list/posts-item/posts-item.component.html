@@ -1,0 +1,15 @@
+<ul *ngIf="post">
+  <li>{{ post.title | truncate: 20 }}</li>
+  <li>{{ post.body | truncate: 50 }}</li>
+
+  <nav class="mt-1">
+    <a
+      *ngFor="let router of routes"
+      [routerLink]="[router?.sourcePath, post.id, router.path]"
+    >
+      <button>{{ router?.title }}</button>
+    </a>
+
+    <button (click)="onDeletePost()">× Delete</button>
+  </nav>
+</ul>

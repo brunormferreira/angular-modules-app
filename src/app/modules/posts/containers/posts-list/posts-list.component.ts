@@ -6,7 +6,7 @@ import { PostsService } from '../../../../core/services/posts/posts.service';
 import { tap, delay } from 'rxjs';
 
 @Component({
-  selector: 'app-posts-list',
+  selector: 'posts-list',
   templateUrl: './posts-list.component.html',
   styleUrls: ['./posts-list.component.scss'],
 })
@@ -14,13 +14,13 @@ export class PostsListComponent implements OnInit {
   posts: IPost[] = [];
   isLoading: boolean = true;
 
-  routes: IRoutes[] = [
+  routesValue: IRoutes[] = [
     {
-      mainPath: '/posts',
       path: 'details',
+      sourcePath: '/posts',
       title: '➝ Details',
     },
-    { mainPath: '/posts', path: 'edit', title: '➝ Edit' },
+    { path: 'edit', sourcePath: '/posts', title: '➝ Edit' },
   ];
 
   constructor(private postsService: PostsService) {}
