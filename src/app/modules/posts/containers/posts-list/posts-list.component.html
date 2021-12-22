@@ -1,10 +1,27 @@
 <app-spinner [isLoading]="isLoading"></app-spinner>
 
-<section>
+<section *ngIf="!isLoading">
+  <h1>Posts List</h1>
+
+  <a [routerLink]="'/posts/new'" style="cursor: pointer">
+    <button>➝ Add new</button>
+  </a>
+
+  <hr />
+
   <ul *ngFor="let post of posts">
     <li>{{ post.title | truncate: 20 }}</li>
-    <a [routerLink]="['/posts', post.id, 'details']">
-      <small>➝ {{ post.body | truncate: 50 }}</small>
-    </a>
+    <li>{{ post.body | truncate: 50 }}</li>
+
+    <nav class="mt-1">
+      <a
+        *ngFor="let router of routes"
+        [routerLink]="[router.mainPath, post.id, router.path]"
+      >
+        <button>{{ router.title }}</button>
+      </a>
+
+      <button (click)="onDeletePost(post)">× Delete</button>
+    </nav>
   </ul>
 </section>
