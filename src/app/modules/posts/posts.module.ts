@@ -9,9 +9,15 @@ import { PostsDetailsComponent } from './containers/posts-details/posts-details.
 
 import { SpinnerModule } from 'src/app/shared/components/spinner/spinner.module';
 import { TruncatePipeModule } from 'src/app/shared/pipes/truncate/truncate.module';
+import { PostsItemComponent } from './containers/posts-list/posts-item/posts-item.component';
 
 @NgModule({
-  declarations: [PostsListComponent, PostsFormComponent, PostsDetailsComponent],
+  declarations: [
+    PostsListComponent,
+    PostsFormComponent,
+    PostsDetailsComponent,
+    PostsItemComponent,
+  ],
   imports: [
     CommonModule,
     PostsRoutingModule,
