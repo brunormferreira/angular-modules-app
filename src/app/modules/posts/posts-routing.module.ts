@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PostsDetailsComponent } from './containers/posts-details/posts-details.component';
-import { PostsEditComponent } from './containers/posts-edit/posts-edit.component';
+import { PostsFormComponent } from './containers/posts-form/posts-form.component';
 import { PostsListComponent } from './containers/posts-list/posts-list.component';
 
 const routes: Routes = [
@@ -10,7 +10,8 @@ const routes: Routes = [
     path: '',
     children: [
       { path: '', component: PostsListComponent },
-      { path: ':id/edit', component: PostsEditComponent },
+      { path: 'new', component: PostsFormComponent },
+      { path: ':id/edit', component: PostsFormComponent },
       { path: ':id/details', component: PostsDetailsComponent },
     ],
   },
