@@ -40,7 +40,7 @@ export class PostsDetailsComponent implements OnInit {
         .updatePost(this.post)
         .pipe(
           delay(1000),
-          tap((post: IPost) => console.log(':: UPDATED TITLE POST ::', post))
+          tap((post: IPost) => console.log(':: UPDATED POST ::', post))
         )
         .subscribe(() => this.goBack());
     }

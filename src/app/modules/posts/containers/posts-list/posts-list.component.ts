@@ -11,13 +11,11 @@ import { tap, delay } from 'rxjs';
 })
 export class PostsListComponent implements OnInit {
   posts: IPost[] = [];
-  isLoading: boolean = false;
+  isLoading: boolean = true;
 
   constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {
-    this.isLoading = true;
-
     this.postsService
       .getPosts()
       .pipe(
