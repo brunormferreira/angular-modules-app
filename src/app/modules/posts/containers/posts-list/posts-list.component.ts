@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IPost } from 'src/app/core/models/post.model';
+import { IPost } from '../../../../core/models/post.model';
+import { IRoutes } from '../../../../core/models/routes.model';
 import { PostsService } from '../../../../core/services/posts/posts.service';
 
 import { tap, delay } from 'rxjs';
@@ -13,6 +14,15 @@ export class PostsListComponent implements OnInit {
   posts: IPost[] = [];
   isLoading: boolean = true;
 
+  routes: IRoutes[] = [
+    {
+      mainPath: '/posts',
+      path: 'details',
+      title: '➝ Details',
+    },
+    { mainPath: '/posts', path: 'edit', title: '➝ Edit' },
+  ];
+
   constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {
@@ -23,5 +33,18 @@ export class PostsListComponent implements OnInit {
         tap(() => (this.isLoading = false))
       )
       .subscribe((posts: IPost[]) => (this.posts = posts));
+  }
+
+  onDeletePost(post: IPost): void {
+    const isValid = confirm(
+      'Are you sure you want to delete this post?' + '\n' + post.title
+    );
+
+    if (isValid) {
+      this.postsService
+        .deletePost(post.id)
+        .pipe(tap(() => console.log(':: DELETED POST ::', post)))
+        .subscribe(() => alert('Post deleted with success!'));
+    }
   }
 }
