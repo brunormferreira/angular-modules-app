@@ -42,7 +42,7 @@ export class PostsListComponent implements OnInit {
 
     if (isValid) {
       this.postsService
-        .deletePost(post.id)
+        .deletePost(post.id!)
         .pipe(tap(() => console.log(':: DELETED POST ::', post)))
         .subscribe(() => alert('Post deleted with success!'));
     }

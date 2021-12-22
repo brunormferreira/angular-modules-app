@@ -1,6 +1,7 @@
 <app-spinner [isLoading]="isLoading"></app-spinner>
 
 <section *ngIf="!isLoading">
+  <small>Check the console.log to see the changes!</small><br />
   <h1>Posts List</h1>
 
   <a [routerLink]="'/posts/new'" style="cursor: pointer">
