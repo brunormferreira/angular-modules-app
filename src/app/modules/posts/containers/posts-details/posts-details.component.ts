@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { IPost } from 'src/app/core/models/post.model';
@@ -11,7 +11,7 @@ import { tap, delay } from 'rxjs';
   styleUrls: ['./posts-details.component.scss'],
 })
 export class PostsDetailsComponent implements OnInit {
-  @Input() post!: IPost;
+  post!: IPost;
 
   constructor(
     private route: ActivatedRoute,
