@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostsEditComponent } from './posts-edit.component';
+import { PostsEditComponent } from './posts-form.component';
 
 describe('PostsEditComponent', () => {
   let component: PostsEditComponent;
@@ -8,9 +8,8 @@ describe('PostsEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostsEditComponent ]
-    })
-    .compileComponents();
+      declarations: [PostsEditComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
