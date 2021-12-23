@@ -1,3 +1,5 @@
+<app-spinner [isLoading]="isLoading"></app-spinner>
+
 <section *ngIf="post">
   <h2>{{ post.title | uppercase }} Details</h2>
 
@@ -5,21 +7,14 @@
 
   <small>{{ post.body }}</small>
 
-  <!-- Template Driven Approach -->
-  <!-- <div>
-    <fieldset>
-      <label for="post-title">Post title: </label>
-      <input
-        id="post-title"
-        [(ngModel)]="post.title"
-        placeholder="Post title"
-      />
-      <hr />
-      <label for="post-body">Post body: </label>
-      <input id="post-body" [(ngModel)]="post.body" placeholder="Post body" />
-    </fieldset>
-  </div> -->
+  <section>
+    <h2>Comments</h2>
+    <ul *ngFor="let comment of comments">
+      <li><b>Name: </b>{{ comment.name }}</li>
+      <li><b>Email: </b>{{ comment.email }}</li>
+      <li><b>Body: </b>{{ comment.body }}</li>
+    </ul>
+  </section>
 
   <button (click)="goBack()">go back</button>
-  <!-- <button (click)="save()">save</button> -->
 </section>
