@@ -78,31 +78,35 @@ export class PostsFormComponent implements OnInit {
     return this.form.controls;
   }
 
-  onAddNewPost(): void {
+  onSubmitForm(): void {
     if (this.form.invalid) {
       return;
     }
 
-    const post: IPost = {
+    const payload: IPost = {
       title: this.formValues['title'].value,
       body: this.formValues['body'].value,
     };
 
-    if (this.post && this.hasId) {
-      post.id = this.post.id;
+    if (this.hasId) {
+      payload.id = this.post?.id;
     }
 
-    const creatingPost = () =>
-      this.postsService.createPost(post).subscribe((post: IPost) => {
-        this.onFinishFormProccess('SAVED', post);
-      });
+    this.router.url.includes('new')
+      ? this.onCreateNewPost(payload)
+      : this.onUpdatePost(payload);
+  }
 
-    const updatingPost = () =>
-      this.postsService.updatePost(post).subscribe((post: IPost) => {
-        this.onFinishFormProccess('UPDATED', post);
-      });
+  onCreateNewPost(post: IPost) {
+    this.postsService.createPost(post).subscribe((post: IPost) => {
+      this.onFinishFormProccess('SAVED', post);
+    });
+  }
 
-    this.router.url.includes('new') ? creatingPost() : updatingPost();
+  onUpdatePost(post: IPost) {
+    this.postsService.updatePost(post).subscribe((post: IPost) => {
+      this.onFinishFormProccess('UPDATED', post);
+    });
   }
 
   onFinishFormProccess(proccess: string, post: IPost) {
