@@ -5,7 +5,7 @@ import { IPost } from 'src/app/core/models/post.model';
 import { IComment } from 'src/app/core/models/comment.model';
 import { PostsService } from '../../../../core/services/posts/posts.service';
 
-import { tap, delay, map } from 'rxjs';
+import { tap, delay } from 'rxjs';
 @Component({
   selector: 'posts-details',
   templateUrl: './posts-details.component.html',
