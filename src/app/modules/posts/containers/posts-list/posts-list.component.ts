@@ -47,11 +47,12 @@ export class PostsListComponent implements OnInit {
         next: (posts: IPost[]) => (this.posts = posts),
         error: (errorMessage: string) => {
           this.showErrorAlert(errorMessage);
+          this.isLoading = false;
         },
       });
   }
 
-  numberOfPages() {
+  numberOfPages(): number {
     return Math.ceil(this.posts.length / this.pageSize);
   }
 
