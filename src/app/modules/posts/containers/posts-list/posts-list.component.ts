@@ -16,6 +16,9 @@ export class PostsListComponent implements OnInit {
   posts: IPost[] = [];
   isLoading: boolean = true;
 
+  currPage: number = 1;
+  pageSize: number = 10;
+
   @ViewChild(PlaceholderDirective)
   alertHost!: PlaceholderDirective;
 
@@ -47,6 +50,10 @@ export class PostsListComponent implements OnInit {
       });
   }
 
+  numberOfPages() {
+    return Math.ceil(this.posts.length / this.pageSize);
+  }
+
   onDeletePost(post: IPost): void {
     const isValid = confirm(
       'Are you sure you want to delete this post?' + '\n' + post.title
@@ -71,6 +78,7 @@ export class PostsListComponent implements OnInit {
       this.closeSub = componentRef.instance.close.subscribe(() => {
         this.closeSub.unsubscribe();
         hostViewContainerRef.clear();
+        // @REDIRECT USER
       });
     }
   }
