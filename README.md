@@ -30,8 +30,6 @@
 
 Run `npm start` for a dev server. Navigate to `http://localhost:4200/posts`. The app will automatically reload if you change any of the source files.
 
-<hr/>
-
 ## Author
 
 - **Bruno Ramires de Moraes Ferreira** - [GitHub](https://github.com/brunormferreira)
