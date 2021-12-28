@@ -29,3 +29,14 @@
 ## Development server
 
 Run `npm start` for a dev server. Navigate to `http://localhost:4200/posts`. The app will automatically reload if you change any of the source files.
+
+<hr/>
+
+## Author
+
+- **Bruno Ramires de Moraes Ferreira** - [GitHub](https://github.com/brunormferreira)
+
+  <a href="https://github.com/brunormferreira">
+    <img 
+    alt="Imagem do Autor Bruno Ramires" src="https://avatars0.githubusercontent.com/u/35575092?s=460&v=4" width="100">
+  </a>
