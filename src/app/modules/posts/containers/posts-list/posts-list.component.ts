@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IPost } from '../../../../core/models/post.model';
 import { IRoutes } from '../../../../core/models/routes.model';
 import { PostsService } from '../../../../core/services/posts/posts.service';
@@ -33,7 +34,7 @@ export class PostsListComponent implements OnInit {
     { path: 'edit', sourcePath: '/posts', title: '➝ Edit' },
   ];
 
-  constructor(private postsService: PostsService) {}
+  constructor(private postsService: PostsService, private router: Router) {}
 
   ngOnInit(): void {
     this.postsService
@@ -78,7 +79,10 @@ export class PostsListComponent implements OnInit {
       this.closeSub = componentRef.instance.close.subscribe(() => {
         this.closeSub.unsubscribe();
         hostViewContainerRef.clear();
-        // @REDIRECT USER
+        this.router.navigate([
+          '/page-not-found',
+          { service_unavailable: true },
+        ]);
       });
     }
   }

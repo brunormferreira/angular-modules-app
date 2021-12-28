@@ -1,4 +1,9 @@
 <main>
   <h1>OOPS! Page Not Found</h1>
-  <p>You can navigate to the <a routerLink="/">homepage</a></p>
+  <p *ngIf="hasErrorFromService; else navigate">
+    Maybe the service is offline, sorry for the inconvenient.
+  </p>
+  <ng-template #navigate>
+    You can navigate to the <a routerLink="/">homepage</a>
+  </ng-template>
 </main>
