@@ -28,7 +28,7 @@
 
 ## Development server
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/posts`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. The app will automatically goes to `http://localhost:4200/posts`. The app automatically reload too if you change any of the source files.
 
 ## Author
 
