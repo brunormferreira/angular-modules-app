@@ -22,8 +22,6 @@
             | slice: currPage * pageSize - pageSize:currPage * pageSize
         "
         [post]="post"
-        [routes]="routesValue"
-        [sourcePath]="sourcePath"
         (remove)="onDeletePost($event)"
       ></posts-item>
 

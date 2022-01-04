@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { IRoutes } from 'src/app/core/models/routes.model';
 import { IPost } from '../../../../core/models/post.model';
 
 @Component({
@@ -9,10 +8,6 @@ import { IPost } from '../../../../core/models/post.model';
 })
 export class PostsItemComponent implements OnInit {
   @Input() post!: IPost;
-
-  @Input() routes!: Array<IRoutes>;
-
-  @Input() sourcePath: string = '';
 
   @Output()
   remove: EventEmitter<IPost> = new EventEmitter<IPost>();

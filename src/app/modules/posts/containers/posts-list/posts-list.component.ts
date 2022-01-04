@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IPost } from '../../../../core/models/post.model';
-import { IRoutes } from '../../../../core/models/routes.model';
 import { PostsService } from '../../../../core/services/posts/posts.service';
 
 import { tap, delay, Subscription } from 'rxjs';
@@ -22,16 +21,6 @@ export class PostsListComponent implements OnInit {
 
   @ViewChild(PlaceholderDirective)
   alertHost!: PlaceholderDirective;
-
-  sourcePath: string = '/posts';
-
-  routesValue: IRoutes[] = [
-    {
-      path: 'details',
-      title: '➝ Details',
-    },
-    { path: 'edit', title: '➝ Edit' },
-  ];
 
   private closeSub!: Subscription;
 

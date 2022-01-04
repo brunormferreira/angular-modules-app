@@ -3,11 +3,12 @@
   <li>{{ post.body | truncate: 50 }}</li>
 
   <nav class="mt-1">
-    <a
-      *ngFor="let router of routes"
-      [routerLink]="[sourcePath, post.id, router.path]"
-    >
-      <button>{{ router?.title }}</button>
+    <a [routerLink]="[post.id, 'details']">
+      <button>➝ Details</button>
+    </a>
+
+    <a [routerLink]="[post.id, 'edit']">
+      <button>➝ Edit</button>
     </a>
 
     <button (click)="onDeletePost()">× Delete</button>
