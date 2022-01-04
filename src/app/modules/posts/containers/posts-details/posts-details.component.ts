@@ -56,18 +56,6 @@ export class PostsDetailsComponent implements OnInit {
       .subscribe((comments: IComment[]) => (this.comments = comments));
   }
 
-  save(): void {
-    if (this.post) {
-      this.postsService
-        .updatePost(this.post)
-        .pipe(
-          delay(1000),
-          tap((post: IPost) => console.log(':: UPDATED POST ::', post))
-        )
-        .subscribe(() => this.goBack());
-    }
-  }
-
   goBack(): void {
     this.location.back();
   }

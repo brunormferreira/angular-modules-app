@@ -23,8 +23,6 @@ export class PostsListComponent implements OnInit {
   @ViewChild(PlaceholderDirective)
   alertHost!: PlaceholderDirective;
 
-  private closeSub!: Subscription;
-
   sourcePath: string = '/posts';
 
   routesValue: IRoutes[] = [
@@ -34,6 +32,8 @@ export class PostsListComponent implements OnInit {
     },
     { path: 'edit', title: '➝ Edit' },
   ];
+
+  private closeSub!: Subscription;
 
   constructor(private postsService: PostsService, private router: Router) {}
 
