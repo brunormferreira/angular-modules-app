@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./not-found.component.scss'],
 })
 export class NotFoundComponent implements OnInit {
-  hasErrorFromService: boolean = false;
+  public hasErrorFromService: boolean = false;
 
   constructor(private router: Router) {}
 

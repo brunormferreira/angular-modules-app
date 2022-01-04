@@ -7,10 +7,11 @@ import { IPost } from '../../../../core/models/post.model';
   styleUrls: ['./posts-item.component.scss'],
 })
 export class PostsItemComponent implements OnInit {
-  @Input() post!: IPost;
+  @Input()
+  public post!: IPost;
 
   @Output()
-  remove: EventEmitter<IPost> = new EventEmitter<IPost>();
+  public remove: EventEmitter<IPost> = new EventEmitter<IPost>();
 
   constructor() {}
 

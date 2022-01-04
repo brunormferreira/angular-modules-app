@@ -12,10 +12,10 @@ import { tap, delay } from 'rxjs';
   styleUrls: ['./posts-details.component.scss'],
 })
 export class PostsDetailsComponent implements OnInit {
-  post!: IPost;
-  comments!: IComment[];
-  id!: number;
-  isLoading: boolean = true;
+  public post!: IPost;
+  public comments!: IComment[];
+  public id!: number;
+  public isLoading: boolean = true;
 
   constructor(
     private route: ActivatedRoute,

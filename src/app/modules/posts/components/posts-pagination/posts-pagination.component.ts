@@ -7,15 +7,20 @@ import { IPost } from '../../../../core/models/post.model';
   styleUrls: ['./posts-pagination.component.scss'],
 })
 export class PostsPaginationComponent implements OnInit {
-  @Input() currPage!: number;
+  @Input()
+  public currPage!: number;
 
-  @Input() pageSize!: number;
+  @Input()
+  public pageSize!: number;
 
-  @Input() posts!: IPost[];
+  @Input()
+  public posts!: IPost[];
 
-  @Output() nextPageChange = new EventEmitter();
+  @Output()
+  public nextPageChange = new EventEmitter();
 
-  @Output() prevPageChange = new EventEmitter();
+  @Output()
+  public prevPageChange = new EventEmitter();
 
   constructor() {}
 

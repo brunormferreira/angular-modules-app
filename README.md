@@ -6,6 +6,8 @@
 
 - All operations are logged on console, because the api will not be really updated on the server but it will be faked as if.
 
+- Zero styles code.
+
 ## Code
 
 - Modules
@@ -16,7 +18,7 @@
 - Reactive Forms
 - Angular components comunication (@Output/ @Input)
 - Routes/ Lazy loading
-- Observable/ Subscription/ Subscribers
+- Observable/ Subscription/ Subscribers/ BehaviorSubject
 
 ## Features
 

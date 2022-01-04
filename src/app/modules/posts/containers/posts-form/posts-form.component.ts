@@ -15,11 +15,11 @@ import { IPost } from '../../../../core/models/post.model';
   styleUrls: ['./posts-form.component.scss'],
 })
 export class PostsFormComponent implements OnInit {
-  form: FormGroup;
-  title: string = '';
+  public form: FormGroup;
+  public title: string = '';
 
-  hasId: boolean = false;
-  id!: number;
+  private hasId: boolean = false;
+  private id!: number;
 
   constructor(
     private fb: FormBuilder,

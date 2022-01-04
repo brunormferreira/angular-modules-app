@@ -13,14 +13,14 @@ import { AlertComponent } from '../../../../shared/components/alert/alert.compon
   styleUrls: ['./posts-list.component.scss'],
 })
 export class PostsListComponent implements OnInit {
-  posts: IPost[] = [];
-  isLoading: boolean = true;
+  public posts: IPost[] = [];
+  public isLoading: boolean = true;
 
-  currPage: number = 1;
-  pageSize: number = 10;
+  public currPage: number = 1;
+  public pageSize: number = 10;
 
   @ViewChild(PlaceholderDirective)
-  alertHost!: PlaceholderDirective;
+  private alertHost!: PlaceholderDirective;
 
   private closeSub!: Subscription;
 
