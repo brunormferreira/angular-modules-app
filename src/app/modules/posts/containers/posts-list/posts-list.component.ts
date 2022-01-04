@@ -53,8 +53,12 @@ export class PostsListComponent implements OnInit {
       });
   }
 
-  numberOfPages(): number {
-    return Math.ceil(this.posts.length / this.pageSize);
+  onPageChange(isNextPage?: boolean): number {
+    if (!isNextPage) {
+      return this.currPage--;
+    }
+
+    return this.currPage++;
   }
 
   onDeletePost(post: IPost): void {

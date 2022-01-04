@@ -2,7 +2,7 @@
 <app-spinner [isLoading]="isLoading"></app-spinner>
 
 <section *ngIf="!isLoading">
-  <small>Check the console.log to see the changes!</small><br />
+  <small>➝ Check the console.log to see the changes!</small><br />
   <h1>@Angular mini-blog / Posts List</h1>
 
   <a [routerLink]="'/posts/new'" style="cursor: pointer">
@@ -22,27 +22,13 @@
     (remove)="onDeletePost($event)"
   ></posts-item>
 
-  <p>
-    <button [disabled]="currPage === 1" (click)="currPage = currPage - 1">
-      PREV
-    </button>
-    <span>Page {{ currPage }} of {{ numberOfPages() }}</span>
-    <button
-      [disabled]="currPage >= posts.length / pageSize"
-      (click)="currPage = currPage + 1"
-    >
-      NEXT
-    </button>
-  </p>
+  <app-posts-pagination
+    [currPage]="currPage"
+    [pageSize]="pageSize"
+    [posts]="posts"
+    (prevPageChange)="onPageChange()"
+    (nextPageChange)="onPageChange(true)"
+  ></app-posts-pagination>
 
-  <footer>
-    All content belongs to
-    <a href="https://jsonplaceholder.typicode.com/" target="_blank"
-      >{{ "{" }}JSON{{ "}" }} Placeholder</a
-    >
-    - Data provided by <b>JSONPlaceholder</b>. © 2021 - All rights reserved.
-    <a href="https://github.com/brunormferreira" target="_blank"
-      >by Bruno Ramires.</a
-    >
-  </footer>
+  <app-footer></app-footer>
 </section>
