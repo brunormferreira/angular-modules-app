@@ -63,7 +63,6 @@ export class PostsFormComponent implements OnInit {
         next: (post: IPost) => {
           this.post = post;
           console.log(':: RETRIEVE POST BY ID ::', post);
-          // this.form.patchValue(post);
         },
         error: (response: Response) => {
           if (response.status == 404) {
