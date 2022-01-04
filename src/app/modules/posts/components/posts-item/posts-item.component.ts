@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IRoutes } from 'src/app/core/models/routes.model';
-import { IPost } from '../../../../../core/models/post.model';
+import { IPost } from '../../../../core/models/post.model';
 
 @Component({
   selector: 'posts-item',

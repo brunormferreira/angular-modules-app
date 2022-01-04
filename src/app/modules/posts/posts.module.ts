@@ -4,8 +4,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { PostsRoutingModule } from './posts-routing.module';
 
+import { PostsItemComponent } from './components/posts-item/posts-item.component';
+
 import { PostsListComponent } from './containers/posts-list/posts-list.component';
-import { PostsItemComponent } from './containers/posts-list/posts-item/posts-item.component';
 import { PostsFormComponent } from './containers/posts-form/posts-form.component';
 import { PostsDetailsComponent } from './containers/posts-details/posts-details.component';
 
