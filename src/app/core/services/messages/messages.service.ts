@@ -14,9 +14,7 @@ export class MessageService {
   }
 
   add(message: string): void {
-    this.messagesSubject$.next(
-      this.messagesSubject$.getValue().concat(message)
-    );
+    this.messagesSubject$.next([...this.messagesSubject$.getValue(), message]);
   }
 
   clear(): void {
