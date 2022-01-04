@@ -8,7 +8,7 @@ import { MessageService } from 'src/app/core/services/messages/messages.service'
   styleUrls: ['./messages.component.scss'],
 })
 export class MessagesComponent implements OnInit {
-  messages$!: Observable<string[]>;
+  public messages$!: Observable<string[]>;
 
   constructor(private messageService: MessageService) {}
 
@@ -16,7 +16,7 @@ export class MessagesComponent implements OnInit {
     this.messages$ = this.messageService.getMessages();
   }
 
-  onClearMessages(): void {
-    this.messageService.clear();
+  public onClearMessages(): void {
+    this.messageService.clearMessages();
   }
 }

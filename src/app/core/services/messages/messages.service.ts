@@ -9,15 +9,15 @@ export class MessageService {
 
   public messages$: Observable<string[]> = this.messagesSubject$.asObservable();
 
-  getMessages(): Observable<string[]> {
+  public getMessages(): Observable<string[]> {
     return this.messages$;
   }
 
-  add(message: string): void {
+  public addMessage(message: string): void {
     this.messagesSubject$.next([...this.messagesSubject$.getValue(), message]);
   }
 
-  clear(): void {
+  public clearMessages(): void {
     this.messagesSubject$.next(null!);
   }
 }

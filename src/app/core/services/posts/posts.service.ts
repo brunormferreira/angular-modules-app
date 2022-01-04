@@ -93,6 +93,6 @@ export class PostsService {
   }
 
   private log(message: string) {
-    this.messageService.add(`PostsService: ${message}`);
+    this.messageService.addMessage(`PostsService: ${message}`);
   }
 }
