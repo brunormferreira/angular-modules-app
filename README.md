@@ -27,6 +27,7 @@
 - Pagination on frontend-side
 - Details Page
 - Comments By an Id / Post By an Id
+- Operation Messages/logs
 - And more...
 
 ## Development server
