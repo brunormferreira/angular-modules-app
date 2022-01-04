@@ -16,6 +16,7 @@ import { TruncatePipeModule } from 'src/app/shared/pipes/truncate/truncate.modul
 import { PlaceholderModule } from 'src/app/shared/directives/placeholder.module';
 import { PostsPaginationComponent } from './components/posts-pagination/posts-pagination.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MessagesModule } from 'src/app/shared/components/messages/messages.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ReactiveFormsModule,
     AlertModule,
     PlaceholderModule,
+    MessagesModule,
   ],
 })
 export class PostsModule {}
