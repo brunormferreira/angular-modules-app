@@ -11,24 +11,32 @@
 
   <hr />
 
-  <posts-item
-    *ngFor="
-      let post of posts
-        | slice: currPage * pageSize - pageSize:currPage * pageSize
-    "
-    [post]="post"
-    [routes]="routesValue"
-    [sourcePath]="sourcePath"
-    (remove)="onDeletePost($event)"
-  ></posts-item>
+  <div class="flex">
+    <section>
+      <posts-item
+        *ngFor="
+          let post of posts
+            | slice: currPage * pageSize - pageSize:currPage * pageSize
+        "
+        [post]="post"
+        [routes]="routesValue"
+        [sourcePath]="sourcePath"
+        (remove)="onDeletePost($event)"
+      ></posts-item>
 
-  <app-posts-pagination
-    [currPage]="currPage"
-    [pageSize]="pageSize"
-    [posts]="posts"
-    (prevPageChange)="onPageChange()"
-    (nextPageChange)="onPageChange(true)"
-  ></app-posts-pagination>
+      <app-posts-pagination
+        [currPage]="currPage"
+        [pageSize]="pageSize"
+        [posts]="posts"
+        (prevPageChange)="onPageChange()"
+        (nextPageChange)="onPageChange(true)"
+      ></app-posts-pagination>
+    </section>
+
+    <section>
+      <app-messages></app-messages>
+    </section>
+  </div>
 
   <app-footer></app-footer>
 </section>
