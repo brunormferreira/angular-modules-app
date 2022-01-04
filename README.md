@@ -38,6 +38,8 @@
 
 - Add Jest and remove Jasmine
 - E2E tests with cypress
+- Input masks/ [ngx-mask](https://www.npmjs.com/package/ngx-mask)
+- Custom validators
 - Maybe create some styles :P
 
 ## Development server
