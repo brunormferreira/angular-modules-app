@@ -1,8 +1,10 @@
 # Mini-blog - @Angular
 
-- An basic application to study Angular fundamentals.
+- A basic application to study Angular.
 
 - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+
+- All operations are logged on console, because the api will not be really updated on the server but it will be faked as if.
 
 ## Code
 
@@ -20,6 +22,7 @@
 
 - Create Posts
 - Update Posts
+- Delete Posts
 - Posts list
 - Pagination on frontend-side
 - Details Page
