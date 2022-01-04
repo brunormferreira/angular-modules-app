@@ -19,6 +19,8 @@
 - Angular components comunication (@Output/ @Input)
 - Routes/ Lazy loading
 - Observable/ Subscription/ Subscribers/ BehaviorSubject
+- Interceptors
+- Access Modifiers
 
 ## Features
 
@@ -31,6 +33,12 @@
 - Comments By an Id / Post By an Id
 - Operation Messages/logs
 - And more...
+
+## Todo
+
+- Add Jest and remove Jasmine
+- E2E tests with cypress
+- Maybe create some styles :P
 
 ## Development server
 
