@@ -11,11 +11,6 @@ import { environment } from '../../../../environments/environment';
 import { throwError, tap } from 'rxjs';
 import { MessageService } from '../messages/messages.service';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  }),
-};
 @Injectable({
   providedIn: 'root',
 })
@@ -51,17 +46,15 @@ export class PostsService {
   }
 
   public createPost(payload: IPost): Observable<IPost> {
-    return this.httpClient
-      .post<IPost>(`${this.contextUrl}`, payload, httpOptions)
-      .pipe(
-        tap((newPost: IPost) => this.log(`added new post id=${newPost.id}`)),
-        catchError(this.handleError)
-      );
+    return this.httpClient.post<IPost>(`${this.contextUrl}`, payload).pipe(
+      tap((newPost: IPost) => this.log(`added new post id=${newPost.id}`)),
+      catchError(this.handleError)
+    );
   }
 
   public updatePost(payload: IPost): Observable<IPost> {
     return this.httpClient
-      .put<IPost>(`${this.contextUrl}/${payload.id}`, payload, httpOptions)
+      .put<IPost>(`${this.contextUrl}/${payload.id}`, payload)
       .pipe(
         tap((_) => this.log(`updated post id=${payload.id}`)),
         catchError(this.handleError)
