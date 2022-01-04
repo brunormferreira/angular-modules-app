@@ -12,6 +12,8 @@ export class PostsItemComponent implements OnInit {
 
   @Input() routes!: Array<IRoutes>;
 
+  @Input() sourcePath: string = '';
+
   @Output()
   remove: EventEmitter<IPost> = new EventEmitter<IPost>();
 

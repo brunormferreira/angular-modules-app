@@ -25,13 +25,14 @@ export class PostsListComponent implements OnInit {
 
   private closeSub!: Subscription;
 
+  sourcePath: string = '/posts';
+
   routesValue: IRoutes[] = [
     {
       path: 'details',
-      sourcePath: '/posts',
       title: '➝ Details',
     },
-    { path: 'edit', sourcePath: '/posts', title: '➝ Edit' },
+    { path: 'edit', title: '➝ Edit' },
   ];
 
   constructor(private postsService: PostsService, private router: Router) {}

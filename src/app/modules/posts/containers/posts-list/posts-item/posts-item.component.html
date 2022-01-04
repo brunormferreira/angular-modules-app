@@ -5,7 +5,7 @@
   <nav class="mt-1">
     <a
       *ngFor="let router of routes"
-      [routerLink]="[router?.sourcePath, post.id, router.path]"
+      [routerLink]="[sourcePath, post.id, router.path]"
     >
       <button>{{ router?.title }}</button>
     </a>
