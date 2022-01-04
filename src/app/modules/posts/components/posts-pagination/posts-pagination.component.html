@@ -1,0 +1,12 @@
+<p>
+  <button [disabled]="this.currPage === 1" (click)="onChangePage()">
+    PREV
+  </button>
+  <span>Page {{ currPage }} of {{ pageCount() }}</span>
+  <button
+    [disabled]="this.currPage >= this.posts.length / this.pageSize"
+    (click)="onChangePage(true)"
+  >
+    NEXT
+  </button>
+</p>
