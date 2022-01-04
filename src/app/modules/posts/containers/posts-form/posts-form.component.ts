@@ -19,8 +19,7 @@ export class PostsFormComponent implements OnInit {
   title: string = '';
 
   hasId: boolean = false;
-
-  post: IPost | undefined;
+  id!: number;
 
   constructor(
     private fb: FormBuilder,
@@ -50,18 +49,17 @@ export class PostsFormComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      const id = +params['id'];
+      this.id = +params['id'];
+      this.title = this.id ? 'Edit Post' : 'New Post';
+      this.hasId = !!this.id;
 
-      this.title = id ? 'Edit Post' : 'New Post';
-      this.hasId = !!id;
-
-      if (!id) {
+      if (!this.id) {
         return;
       }
 
-      this.postsService.getPostById(id).subscribe({
+      this.postsService.getPostById(this.id).subscribe({
         next: (post: IPost) => {
-          this.post = post;
+          this.form.patchValue(post);
           console.log(':: RETRIEVE POST BY ID ::', post);
         },
         error: (response: Response) => {
@@ -88,7 +86,7 @@ export class PostsFormComponent implements OnInit {
     };
 
     if (this.hasId) {
-      payload.id = this.post?.id;
+      payload.id = this.id;
     }
 
     this.router.url.includes('new')
