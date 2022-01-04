@@ -2,7 +2,10 @@
 <app-spinner [isLoading]="isLoading"></app-spinner>
 
 <section *ngIf="!isLoading">
-  <small>➝ Check the console.log to see the changes!</small><br />
+  <small
+    >➝ If you prefer, check the console.log to see the changes, or messages on
+    the side!</small
+  ><br />
   <h1>@Angular mini-blog / Posts List</h1>
 
   <a [routerLink]="'/posts/new'" style="cursor: pointer">
