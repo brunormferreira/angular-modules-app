@@ -74,10 +74,9 @@ export class PostsListComponent implements OnInit {
       this.closeSub = componentRef.instance.close.subscribe(() => {
         this.closeSub.unsubscribe();
         hostViewContainerRef.clear();
-        this.router.navigate([
-          '/page-not-found',
-          { service_unavailable: true },
-        ]);
+        this.router.navigate(['/page-not-found'], {
+          queryParams: { error: true },
+        });
       });
     }
   }
