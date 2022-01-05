@@ -1,6 +1,6 @@
 <main>
   <h1>OOPS! Page Not Found</h1>
-  <p *ngIf="hasErrorFromService; else navigate">
+  <p *ngIf="hasError; else navigate">
     Maybe the service is offline, sorry for the inconvenient.
   </p>
   <ng-template #navigate>

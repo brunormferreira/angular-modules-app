@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./not-found.component.scss'],
 })
 export class NotFoundComponent implements OnInit {
-  public hasErrorFromService: boolean = false;
+  public hasError: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const validation = this.router.url.includes('unavailable');
-    if (validation) this.hasErrorFromService = true;
+    this.route.queryParams.subscribe((params: Params) => {
+      this.hasError = !!params['error'];
+    });
   }
 }
