@@ -1,6 +1,7 @@
 {
   "name": "json-placeholder-app",
   "version": "0.0.0",
+  "author": "Bruno Ramires de M. Ferreira",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
